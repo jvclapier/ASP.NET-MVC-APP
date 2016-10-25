@@ -1,9 +1,34 @@
-﻿@{
+﻿@model  BlowOut.Models.ContactModel
+@{
     ViewBag.Title = "Contact";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h4>Please call Support at <b><u>801-555-1212.</u></b> Thank you!</h4>
 
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(model=>model.FirstName, "First Name")
+        @Html.EditorFor(model => model.FirstName)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.LastName, "LastName")
+        @Html.EditorFor(model => model.LastName)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Email, "Email")
+        @Html.EditorFor(model => model.Email)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Comment, "Comment")
+        @Html.EditorFor(model => model.Comment)
+    </div>
+    <div>
+        <input type="submit" value="submit" />
+        <input type="reset" value="reset" />
+    </div>
+}
+<br /><br />
 <address>
     One Microsoft Way<br />
     Redmond, WA 98052-6399<br />
